@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
+=======
+import 'package:com_pone/welcome_screen.dart';
+import 'package:com_pone/main_screen.dart';
+>>>>>>> Stashed changes
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Com-Pone',
       theme: ThemeData(
           scaffoldBackgroundColor: const Color.fromARGB(255, 32, 32, 32)),
-      home: const WelcomeScreen(),
+      home: const MainScreen(),
     );
   }
 }
