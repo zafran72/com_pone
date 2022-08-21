@@ -1,3 +1,4 @@
+import 'package:com_pone/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -50,7 +51,11 @@ class WelcomeScreen extends StatelessWidget {
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
                         const Color.fromARGB(255, 0, 247, 247))),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const MainScreen();
+                  }));
+                },
                 child: const Text(
                   "Continue",
                   style: TextStyle(color: Colors.black),
