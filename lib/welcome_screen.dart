@@ -35,32 +35,7 @@ class WelcomeScreen extends StatelessWidget {
             "Discover  your PC’s component",
             style: TextStyle(color: Color.fromARGB(255, 88, 82, 82)),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 40, bottom: 20),
-            width: 240,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            child: const NameField(),
-          ),
-          SizedBox(
-            width: 160.0,
-            height: 35.0,
-            child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromARGB(255, 0, 247, 247))),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const MainScreen();
-                  }));
-                },
-                child: const Text(
-                  "Continue",
-                  style: TextStyle(color: Colors.black),
-                )),
-          )
+          const NameField(),
         ],
       ),
     )));
@@ -75,28 +50,65 @@ class NameField extends StatefulWidget {
 }
 
 class NameFieldState extends State<NameField> {
-  String name = '';
+  String _name = '';
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      style: const TextStyle(
-          color: Color.fromARGB(255, 88, 82, 82),
-          fontSize: 16,
-          fontWeight: FontWeight.bold),
-      textAlign: TextAlign.center,
-      decoration: const InputDecoration(
-        hintText: "Enter your name",
-        hintStyle: TextStyle(
-            color: Color.fromARGB(255, 88, 82, 82),
-            fontSize: 16,
-            fontWeight: FontWeight.bold),
-      ),
-      onChanged: (String value) {
-        setState(() {
-          name = value;
-        });
-      },
+    return Column(
+      children: [
+        Container(
+          margin: const EdgeInsets.only(top: 40, bottom: 20),
+          width: 240,
+          decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: TextField(
+            style: const TextStyle(
+                color: Color.fromARGB(255, 88, 82, 82),
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+            decoration: const InputDecoration(
+              hintText: "Enter your name",
+              hintStyle: TextStyle(
+                  color: Color.fromARGB(255, 88, 82, 82),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+            ),
+            onChanged: (String value) {
+              setState(() {
+                _name = value;
+              });
+            },
+          ),
+        ),
+        SizedBox(
+          width: 160.0,
+          height: 35.0,
+          child: ElevatedButton(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    const Color.fromARGB(255, 0, 247, 247))),
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      content: Text('Hello, $_name'),
+                    );
+                  });
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const MainScreen();
+              }));
+            },
+            child: const Text(
+              "Continue",
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
