@@ -7,16 +7,13 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Center(
-            child: Container(
-              margin: const EdgeInsets.only(top: 100.0),
+          const Center(
+            child: SizedBox(
               width: 240.0,
-              child: const Text(
+              child: Text(
                 "WELCOME TO COM-PONE",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -38,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
           const NameField(),
         ],
       ),
-    )));
+    );
   }
 }
 

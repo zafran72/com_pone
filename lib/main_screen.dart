@@ -1,3 +1,4 @@
+import 'package:com_pone/component_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:com_pone/model/pc_component.dart';
 
@@ -55,57 +56,74 @@ class MainScreen extends StatelessWidget {
                 itemBuilder: (BuildContext ctx, index) {
                   final PcComponent pc = pcList[index];
                   if (index % 2 == 0) {
-                    return Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            margin: const EdgeInsets.only(top: 10, bottom: 10),
-                            child: Image.asset(
-                              pc.imagePC,
-                              height: 175,
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return ComponentScreen(pc: pc);
+                        }));
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              margin:
+                                  const EdgeInsets.only(top: 10, bottom: 10),
+                              child: Image.asset(
+                                pc.imagePC,
+                                height: 175,
+                              ),
                             ),
-                          ),
-                          Text(
-                            pc.name,
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
+                            Text(
+                              pc.name,
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   } else {
-                    return Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 0, 65, 101),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            margin: const EdgeInsets.only(top: 10, bottom: 10),
-                            child: Image.asset(
-                              pc.imagePC,
-                              height: 175,
-                            ),
+                    return InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return ComponentScreen(pc: pc);
+                          }));
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 0, 65, 101),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Container(
+                                margin:
+                                    const EdgeInsets.only(top: 10, bottom: 10),
+                                child: Image.asset(
+                                  pc.imagePC,
+                                  height: 175,
+                                ),
+                              ),
+                              Text(
+                                pc.name,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
                           ),
-                          Text(
-                            pc.name,
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                    );
+                        ));
                   }
                 }),
           ],
