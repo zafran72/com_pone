@@ -91,13 +91,13 @@ class NameFieldState extends State<NameField> {
                 backgroundColor: MaterialStateProperty.all<Color>(
                     const Color.fromARGB(255, 0, 247, 247))),
             onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      content: Text('Hello, $_name'),
-                    );
-                  });
+              // showDialog(
+              //     context: context,
+              //     builder: (context) {
+              //       return AlertDialog(
+              //         content: Text('Hello, $_name'),
+              //       );
+              //     });
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const MainScreen();
               }));
