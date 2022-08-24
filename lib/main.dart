@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:com_pone/welcome_screen.dart';
-import 'package:com_pone/main_screen.dart';
 
 void main() {
   runApp(const MyApp());

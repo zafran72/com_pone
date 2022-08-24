@@ -7,16 +7,13 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Center(
-            child: Container(
-              margin: const EdgeInsets.only(top: 100.0),
+          const Center(
+            child: SizedBox(
               width: 240.0,
-              child: const Text(
+              child: Text(
                 "WELCOME TO COM-PONE",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -38,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
           const NameField(),
         ],
       ),
-    )));
+    );
   }
 }
 
@@ -65,14 +62,12 @@ class NameFieldState extends State<NameField> {
           ),
           child: TextField(
             style: const TextStyle(
-                color: Color.fromARGB(255, 88, 82, 82),
-                fontSize: 16,
-                fontWeight: FontWeight.bold),
+                color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
             decoration: const InputDecoration(
               hintText: "Enter your name",
               hintStyle: TextStyle(
-                  color: Color.fromARGB(255, 88, 82, 82),
+                  color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
@@ -91,15 +86,8 @@ class NameFieldState extends State<NameField> {
                 backgroundColor: MaterialStateProperty.all<Color>(
                     const Color.fromARGB(255, 0, 247, 247))),
             onPressed: () {
-              // showDialog(
-              //     context: context,
-              //     builder: (context) {
-              //       return AlertDialog(
-              //         content: Text('Hello, $_name'),
-              //       );
-              //     });
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const MainScreen();
+                return MainScreen(_name);
               }));
             },
             child: const Text(
