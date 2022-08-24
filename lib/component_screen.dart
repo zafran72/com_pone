@@ -196,7 +196,25 @@ class ComponentScreen extends StatelessWidget {
                       ),
                       const Text(' '),
                       Text(
-                        "AMD Ryzen 3 Pro 4350G 3.8Ghz Up To..., ASRock A520M HDV..., ADATA LEGEND 740 250GB NVME PCIe..., ADATA DDR4 XPG GAMMIX D30 PC25600 3200MH..., CUBE GAMING HAFT ATX LEFT SIDE..., 1STPLAYER Gaming PSU DK4.0 400W PS 400AX...",
+                        pc.spesifications[0],
+                        textAlign: TextAlign.justify,
+                        style: mainTextStyle,
+                      ),
+                      const Text(''),
+                      Text(
+                        pc.spesifications[1],
+                        textAlign: TextAlign.justify,
+                        style: mainTextStyle,
+                      ),
+                      const Text(''),
+                      Text(
+                        pc.spesifications[2],
+                        textAlign: TextAlign.justify,
+                        style: mainTextStyle,
+                      ),
+                      const Text(''),
+                      Text(
+                        pc.spesifications[3],
                         textAlign: TextAlign.justify,
                         style: mainTextStyle,
                       ),

@@ -62,14 +62,12 @@ class NameFieldState extends State<NameField> {
           ),
           child: TextField(
             style: const TextStyle(
-                color: Color.fromARGB(255, 88, 82, 82),
-                fontSize: 16,
-                fontWeight: FontWeight.bold),
+                color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
             decoration: const InputDecoration(
               hintText: "Enter your name",
               hintStyle: TextStyle(
-                  color: Color.fromARGB(255, 88, 82, 82),
+                  color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
@@ -88,15 +86,8 @@ class NameFieldState extends State<NameField> {
                 backgroundColor: MaterialStateProperty.all<Color>(
                     const Color.fromARGB(255, 0, 247, 247))),
             onPressed: () {
-              // showDialog(
-              //     context: context,
-              //     builder: (context) {
-              //       return AlertDialog(
-              //         content: Text('Hello, $_name'),
-              //       );
-              //     });
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const MainScreen();
+                return MainScreen(_name);
               }));
             },
             child: const Text(

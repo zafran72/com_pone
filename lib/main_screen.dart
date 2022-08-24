@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:com_pone/model/pc_component.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  final String name;
 
-  final List<int> numberList = const <int>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const MainScreen(this.name, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +21,9 @@ class MainScreen extends StatelessWidget {
           children: <Widget>[
             Container(
               margin: const EdgeInsets.only(top: 10, left: 20),
-              child: const Text(
-                "Hi, Zafran",
-                style: TextStyle(
+              child: Text(
+                "Hi, $name",
+                style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
