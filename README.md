@@ -1,4 +1,4 @@
-# com_pone
+# :computer: com_pone
 
 A new Flutter project that build an application to discover a PC's component
 
