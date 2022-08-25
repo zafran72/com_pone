@@ -16,7 +16,6 @@ class WelcomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const SizedBox(
-                    // margin: const EdgeInsets.only(top: 100),
                     width: 240.0,
                     child: Text(
                       "WELCOME TO COM-PONE",
