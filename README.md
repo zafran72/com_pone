@@ -1,6 +1,6 @@
 # :computer: com_pone
 
-A new Flutter project that build an application to discover a PC's component
+:desktop_computer: A Flutter project that build an application to discover a PC's component
 
 ## Getting Started
 
