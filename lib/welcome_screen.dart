@@ -7,33 +7,41 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Center(
-            child: SizedBox(
-              width: 240.0,
-              child: Text(
-                "WELCOME TO COM-PONE",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Center(
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 100),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const SizedBox(
+                    width: 240.0,
+                    child: Text(
+                      "WELCOME TO COM-PONE",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 20.0, bottom: 10.0),
+                    child: Image.asset('images/compone.png',
+                        width: 300, height: 230),
+                  ),
+                  const Text(
+                    "Discover your PC’s component",
+                    style: TextStyle(color: Color.fromARGB(255, 88, 82, 82)),
+                  ),
+                  const NameField(),
+                ],
               ),
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 20.0, bottom: 10.0),
-            child: Image.asset('images/compone.png', width: 300, height: 230),
-          ),
-          const Text(
-            "Discover  your PC’s component",
-            style: TextStyle(color: Color.fromARGB(255, 88, 82, 82)),
-          ),
-          const NameField(),
-        ],
+        ),
       ),
     );
   }

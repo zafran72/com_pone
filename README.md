@@ -1,6 +1,6 @@
 # com_pone
 
-A new Flutter project.
+A new Flutter project that build an application to discover a PC's component
 
 ## Getting Started
 
