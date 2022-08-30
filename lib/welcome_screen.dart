@@ -7,41 +7,35 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 100),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  const SizedBox(
-                    width: 240.0,
-                    child: Text(
-                      "WELCOME TO COM-PONE",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 20.0, bottom: 10.0),
-                    child: Image.asset('images/compone.png',
-                        width: 300, height: 230),
-                  ),
-                  const Text(
-                    "Discover your PC’s component",
-                    style: TextStyle(color: Color.fromARGB(255, 88, 82, 82)),
-                  ),
-                  const NameField(),
-                ],
+      body: Center(
+        // child: Expanded(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'WELCOME TO\nCOM-PONE',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.only(top: 50, bottom: 25),
+              child: Image.asset('images/compone.png', width: 280),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 45),
+              child: Text(
+                "Discover your PC's Component",
+                style: TextStyle(color: Color.fromARGB(255, 88, 82, 82)),
+              ),
+            ),
+            const NameField(),
+          ],
         ),
+        // ),
       ),
     );
   }
@@ -62,7 +56,7 @@ class NameFieldState extends State<NameField> {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 40, bottom: 20),
+          margin: const EdgeInsets.only(bottom: 20),
           width: 240,
           decoration: BoxDecoration(
             color: Colors.black,
@@ -70,7 +64,10 @@ class NameFieldState extends State<NameField> {
           ),
           child: TextField(
             style: const TextStyle(
-                color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
             textAlign: TextAlign.center,
             decoration: const InputDecoration(
               hintText: "Enter your name",

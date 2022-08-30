@@ -13,8 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Com-Pone',
       theme: ThemeData(
-          fontFamily: 'Roboto',
-          scaffoldBackgroundColor: const Color.fromARGB(255, 32, 32, 32)),
+        fontFamily: 'Roboto',
+        scaffoldBackgroundColor: const Color.fromARGB(255, 32, 32, 32),
+      ),
       home: const WelcomeScreen(),
       debugShowCheckedModeBanner: false,
     );
