@@ -1,6 +1,7 @@
 # :computer: com_pone
 
 :desktop_computer: A Flutter project that build an application to discover a PC's component
+![mockup](https://user-images.githubusercontent.com/57694121/187460661-8aaa3cee-aa4a-4092-a95c-77304f6ade84.png)
 
 ## Getting Started
 
