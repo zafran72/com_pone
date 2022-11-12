@@ -1,6 +1,6 @@
 # :computer: com_pone
 
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev) :desktop_computer: A Flutter project that build an application to discover a PC's component
+[![My Skills](https://skillicons.dev/icons?i=flutter)](https://skillicons.dev) :desktop_computer: A Flutter project that build an application to discover a PC's component
 
 ![mockup](https://user-images.githubusercontent.com/57694121/187460661-8aaa3cee-aa4a-4092-a95c-77304f6ade84.png)
 
